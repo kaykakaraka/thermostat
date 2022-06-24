@@ -6,6 +6,12 @@ describe(Thermostat,() => {
     expect(thermostat.getTemperature()).toEqual(20);
   });
 
+  it('raises the temperature by 1 by calling the up method',() => {
+    const thermostat = new Thermostat();
+    thermostat.up();
+    expect(thermostat.getTemperature()).toEqual(21);
+  })
+
   it('raises the temperature by 2 by using the up method twice',() => {
     const thermostat = new Thermostat();
     thermostat.up();
