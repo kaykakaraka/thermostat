@@ -32,4 +32,12 @@ describe(Thermostat,() => {
     expect(thermostat.getTemperature()).toEqual(18);
   })
 
+  it('can raise and then lower the temperature',() => {
+    const thermostat = new Thermostat();
+    thermostat.up();
+    thermostat.up();  
+    thermostat.down();
+    expect(thermostat.getTemperature()).toEqual(21);
+  })
+
 });
