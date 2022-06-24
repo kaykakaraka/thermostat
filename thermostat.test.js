@@ -1,3 +1,4 @@
+const { isContext } = require('vm');
 const Thermostat = require('./thermostat');
 
 describe(Thermostat,() => {
@@ -49,4 +50,9 @@ describe(Thermostat,() => {
     expect(thermostat.getTemperature()).toEqual(25);
   })
 
+  it('still shows the true temperature when the max temp is not reached',() => {
+    const thermostat = new Thermostat();
+    thermostat.setPowerSavingMode(true); 
+    expect(thermostat.getTemperature()).toEqual(20);
+  })
 });
