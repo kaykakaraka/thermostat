@@ -63,4 +63,13 @@ describe(Thermostat,() => {
     }
     expect(thermostat.getTemperature()).toEqual(25);
   });
+
+  it('turns off power savng mode',() => {
+    const thermostat = new Thermostat();
+    thermostat.setPowerSavingMode(false);
+    for (let i = 0 ; i < 10 ; i++) {
+      thermostat.up();
+    }
+    expect(thermostat.getTemperature()).toEqual(30);
+  })
 })
