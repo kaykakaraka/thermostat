@@ -1,3 +1,4 @@
+const { runInThisContext } = require("vm");
 const { threadId } = require("worker_threads");
 
 class Thermostat {
@@ -34,7 +35,11 @@ class Thermostat {
   }
 
   getEnergyUsage() {
-    return "medium-usage";
+    if (this.temp == 20)
+      return "medium-usage";
+    else if (this.temp == 30)
+      return "high-usage"
+    end
   }
 }
 

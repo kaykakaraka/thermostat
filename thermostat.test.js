@@ -110,4 +110,13 @@ describe(Thermostat,() => {
     const thermostat = new Thermostat();
     expect(thermostat.getEnergyUsage()).toEqual('medium-usage');
   })
+
+  it('returns high usage as the energy usage when the thermostat is tutned up to 30',() => {
+    const thermostat = new Thermostat();
+    thermostat.setPowerSavingMode(false);
+    for (let i = 0 ; i < 10 ; i++) {
+      thermostat.up();
+    }
+    expect(thermostat.getEnergyUsage()).toEqual('high-usage');
+  })
 })
