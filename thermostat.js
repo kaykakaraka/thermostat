@@ -13,7 +13,7 @@ class Thermostat {
 
   getTemperature() {
     if (this.lowerTemp == 19) {
-      return 19
+      return this.lowerTemp;
     } else {
     return this.temp;
     }
