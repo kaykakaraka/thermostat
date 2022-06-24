@@ -1,3 +1,5 @@
+const { threadId } = require("worker_threads");
+
 class Thermostat {
   constructor() {
     this.temp = 20;
@@ -14,15 +16,21 @@ class Thermostat {
   }
 
   down() {
-    this.temp -= 1;
+    if (this.temp > 10) {
+      this.temp -= 1;
+    }
   }
 
   setPowerSavingMode(command) {
-      this.powerSavingMode = command;
+    this.powerSavingMode = command;
+  }
+
+  reset() {
+    this.temp = 20;
   }
 
   getTemperature() {
-      return this.temp;
+    return this.temp;
   }
 }
 

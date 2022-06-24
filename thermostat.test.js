@@ -73,7 +73,7 @@ describe(Thermostat,() => {
     expect(thermostat.getTemperature()).toEqual(30);
   })
 
-  it('has an upper limit of 32 when power saving mode if off',() => {
+  it('has an upper limit of 32 when power saving mode is off',() => {
     const thermostat = new Thermostat();
     thermostat.setPowerSavingMode(false);
     for (let i = 0 ; i < 15 ; i++) {
@@ -88,5 +88,21 @@ describe(Thermostat,() => {
       thermostat.down();
     }
     expect(thermostat.getTemperature()).toEqual(10);
+  })
+
+  it('resets to 20 degrees when you call the reset method',() => {
+    const thermostat = new Thermostat();
+    thermostat.up();
+    thermostat.reset();
+    expect(thermostat.getTemperature()).toEqual(20);
+  })
+
+  it('resets up to 20 when the temperature is below 20',() => {
+    const thermostat = new Thermostat();
+    for (let i = 0 ; i < 15 ; i++) {
+      thermostat.down();
+    }
+    thermostat.reset();
+    expect(thermostat.getTemperature()).toEqual(20);
   })
 })
