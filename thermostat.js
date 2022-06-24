@@ -1,3 +1,4 @@
+const { REFUSED } = require("dns");
 const { runInThisContext } = require("vm");
 const { threadId } = require("worker_threads");
 
@@ -35,9 +36,7 @@ class Thermostat {
   }
 
   getEnergyUsage() {
-    if (this.temp == 20)
-      return "medium-usage";
-    else if (this.temp == 22)
+    if (this.temp <= 25)
       return "medium-usage";
     else if (this.temp == 30)
       return "high-usage";
