@@ -32,6 +32,10 @@ class Thermostat {
   getTemperature() {
     return this.temp;
   }
+
+  getEnergyUsage() {
+    return "medium-usage";
+  }
 }
 
 module.exports = Thermostat;

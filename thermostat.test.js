@@ -105,4 +105,9 @@ describe(Thermostat,() => {
     thermostat.reset();
     expect(thermostat.getTemperature()).toEqual(20);
   })
+
+  it('returns medium usage as the energy usage when the thermostat is created',() => {
+    const thermostat = new Thermostat();
+    expect(thermostat.getEnergyUsage()).toEqual('medium-usage');
+  })
 })
