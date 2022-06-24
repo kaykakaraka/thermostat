@@ -39,6 +39,9 @@ class Thermostat {
     if (this.temp == 17) {
       return 'low-usage';
     }
+    else if (this.temp == 10) {
+      return 'low-usage';
+    }
     else if (this.temp <= 25) {
       return "medium-usage";
     }
