@@ -5,7 +5,9 @@ class Thermostat {
   }
 
   up() {
-    this.temp += 1;
+    if (this.powerSavingMode == true && this.temp < 25) { 
+      this.temp += 1;
+    };
   }
 
   down() {
@@ -17,12 +19,7 @@ class Thermostat {
   }
 
   getTemperature() {
-    if (this.powerSavingMode == true && this.temp > 25) {
-      return 25
-    } 
-    else {
       return this.temp;
-    }
   }
 }
 
