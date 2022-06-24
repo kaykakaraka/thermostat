@@ -31,4 +31,5 @@ describe(Thermostat,() => {
     thermostat.down();
     expect(thermostat.getTemperature()).toEqual(18);
   })
+
 });
