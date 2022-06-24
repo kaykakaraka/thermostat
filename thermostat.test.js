@@ -119,4 +119,11 @@ describe(Thermostat,() => {
     }
     expect(thermostat.getEnergyUsage()).toEqual('high-usage');
   })
+
+  it('returns medium usage as the energy usage when the thermostat is turned up to 22',() => {
+    const thermostat = new Thermostat();
+    thermostat.up()
+    thermostat.up()
+    expect(thermostat.getEnergyUsage()).toEqual('medium-usage');
+  })
 })
