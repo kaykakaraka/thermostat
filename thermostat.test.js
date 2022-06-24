@@ -72,4 +72,21 @@ describe(Thermostat,() => {
     }
     expect(thermostat.getTemperature()).toEqual(30);
   })
+
+  it('has an upper limit of 32 when power saving mode if off',() => {
+    const thermostat = new Thermostat();
+    thermostat.setPowerSavingMode(false);
+    for (let i = 0 ; i < 15 ; i++) {
+      thermostat.up();
+    }
+    expect(thermostat.getTemperature()).toEqual(32);
+  })
+
+  it('has a minimum temp of 10',() => {
+    const thermostat = new Thermostat();
+    for (let i = 0 ; i < 15 ; i++) {
+      thermostat.down();
+    }
+    expect(thermostat.getTemperature()).toEqual(10);
+  })
 })
