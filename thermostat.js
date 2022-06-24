@@ -38,6 +38,8 @@ class Thermostat {
   getEnergyUsage() {
     if (this.temp <= 25)
       return "medium-usage";
+    else if (this.temp == 26)
+      return "high-usage";
     else if (this.temp == 30)
       return "high-usage";
     end
