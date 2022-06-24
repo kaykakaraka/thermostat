@@ -141,7 +141,15 @@ describe(Thermostat,() => {
     for (let i = 0 ; i < 6 ; i++) {
       thermostat.up();
     }
-    console.log(thermostat.getTemperature())
     expect(thermostat.getEnergyUsage()).toEqual('high-usage');
+  })
+
+  it('returns low usage for 17 degrees',() => {
+    const thermostat = new Thermostat();
+    for (let i = 0 ; i < 3 ; i++) {
+      thermostat.down();
+    }
+    console.log(thermostat.getTemperature())
+    expect(thermostat.getEnergyUsage()).toEqual('low-usage');
   })
 })
