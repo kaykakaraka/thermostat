@@ -55,4 +55,12 @@ describe(Thermostat,() => {
     thermostat.setPowerSavingMode(true); 
     expect(thermostat.getTemperature()).toEqual(20);
   })
-});
+
+  it('has power saving mode on by default',() => {
+    const thermostat = new Thermostat();
+    for (let i = 0 ; i < 10 ; i++) {
+      thermostat.up();
+    }
+    expect(thermostat.getTemperature()).toEqual(25);
+  });
+})
