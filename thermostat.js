@@ -36,16 +36,13 @@ class Thermostat {
   }
 
   getEnergyUsage() {
-    if (this.temp == 17) {
-      return 'low-usage';
-    }
-    else if (this.temp == 10) {
+    if (this.temp < 18) {
       return 'low-usage';
     }
     else if (this.temp <= 25) {
       return "medium-usage";
     }
-    else if (this.temp > 25) {
+    else {
       return "high-usage";
     }
   }
