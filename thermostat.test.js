@@ -40,4 +40,13 @@ describe(Thermostat,() => {
     expect(thermostat.getTemperature()).toEqual(21);
   })
 
+  it('limits temperature at 25 when power saving mode is on',() => {
+    const thermostat = new Thermostat();
+    thermostat.setPowerSavingMode(true); 
+    for (let i = 0 ; i < 10 ; i++) {
+      thermostat.up();
+    }
+    expect(thermostat.getTemperature()).toEqual(25);
+  })
+
 });
