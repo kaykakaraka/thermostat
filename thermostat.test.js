@@ -24,4 +24,11 @@ describe(Thermostat,() => {
     thermostat.down();
     expect(thermostat.getTemperature()).toEqual(19);
   })
+
+  it('lowers the temperature by 2 by using the down method twice',() => {
+    const thermostat = new Thermostat();
+    thermostat.down();
+    thermostat.down();
+    expect(thermostat.getTemperature()).toEqual(18);
+  })
 });
