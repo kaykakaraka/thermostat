@@ -7,8 +7,16 @@ class Thermostat {
     this.temp += 1;
   }
 
+  down() {
+    this.lowerTemp = 19
+  }
+
   getTemperature() {
+    if (this.lowerTemp == 19) {
+      return 19
+    } else {
     return this.temp;
+    }
   }
 }
 
